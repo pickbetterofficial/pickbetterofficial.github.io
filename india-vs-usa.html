@@ -1,98 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stats Hub | India vs USA Analysis</title>
-    <style>
-        :root {
-            --india-blue: #007bff;
-            --usa-red: #dc3545;
-            --dark-navy: #1a3a5a;
-            --light-bg: #f8f9fa;
-        }
-
-        body { 
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
-            line-height: 1.6; 
-            color: #333; 
-            max-width: 900px; 
-            margin: 0 auto; 
-            padding: 20px; 
-            background: #e9ecef; 
-        }
-
-        .container { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-
-        h1 { color: var(--dark-navy); text-align: center; font-size: 2.5rem; margin-bottom: 10px; }
-        .subtitle { text-align: center; color: #666; margin-bottom: 30px; font-style: italic; }
-
-        /* Win Probability Bar */
-        .win-probability-section { margin-bottom: 40px; }
-        .win-label { display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 8px; }
-        .win-bar-container { background: #eee; border-radius: 50px; height: 35px; overflow: hidden; display: flex; border: 2px solid #fff; box-shadow: inset 0 2px 4px rgba(0,0,0,0.1); }
-        .bar-india { background: linear-gradient(90deg, #0056b3, #007bff); width: 92%; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); }
-        .bar-usa { background: linear-gradient(90deg, #dc3545, #a71d2a); width: 8%; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; }
-
-        /* Stats Grid Boxes */
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 40px; }
-        .stat-box { background: var(--light-bg); padding: 20px; border-radius: 10px; text-align: center; border-bottom: 4px solid var(--india-blue); }
-        .stat-box h3 { margin: 0; font-size: 0.9rem; color: #777; text-transform: uppercase; }
-        .stat-box p { margin: 10px 0 0; font-size: 1.5rem; font-weight: bold; color: var(--dark-navy); }
-
-        /* Professional Data Table */
-        .table-container { overflow-x: auto; margin-top: 20px; }
-        .styled-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; min-width: 400px; border-radius: 8px 8px 0 0; overflow: hidden; }
-        .styled-table George thead tr { background-color: var(--dark-navy); color: #ffffff; text-align: left; font-weight: bold; }
-        .styled-table th, .styled-table td { padding: 15px 20px; }
-        .styled-table tbody tr { border-bottom: 1px solid #dddddd; }
-        .styled-table tbody tr:nth-of-type(even) { background-color: #f3f3f3; }
-        .styled-table tbody tr:last-of-type { border-bottom: 2px solid var(--dark-navy); }
-        .highlight-ind { color: var(--india-blue); font-weight: bold; }
-        .highlight-usa { color: var(--usa-red); font-weight: bold; }
-
-        .analysis-card { background: #fffde7; border-left: 5px solid #fbc02d; padding: 20px; margin-top: 30px; border-radius: 5px; }
-        .back-btn { display: inline-block; margin-top: 30px; padding: 10px 20px; background: var(--dark-navy); color: white; text-decoration: none; border-radius: 5px; transition: 0.3s; }
-        .back-btn:hover { background: #000; }
-
-        @media (max-width: 600px) {
-            .stats-grid { grid-template-columns: 1fr 1fr; }
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <h1>Match Analytics: India vs USA</h1>
-    <p class="subtitle">Venue: Willowmoore Park, Benoni | Tournament Cycle 2026</p>
-
-    <div class="win-probability-section">
+<div class="win-probability-section">
         <div class="win-label">
-            <span>🇮🇳 India Win Prob.</span>
-            <span>🇺🇸 USA Win Prob.</span>
+            <span>🇮🇳 India (Defending Champs)</span>
+            <span>🇺🇸 USA (Underdogs)</span>
         </div>
         <div class="win-bar-container">
-            <div class="bar-india">92%</div>
-            <div class="bar-usa">8%</div>
+            <div class="bar-india">96%</div>
+            <div class="bar-usa">4%</div>
         </div>
     </div>
 
     <div class="stats-grid">
         <div class="stat-box">
-            <h3>Avg. 1st Innings</h3>
-            <p>245</p>
+            <h3>Wankhede Avg. 1st Inn</h3>
+            <p>192</p>
         </div>
         <div class="stat-box">
-            <h3>Avg. Sixes</h3>
-            <p>10.5</p>
+            <h3>Projected Sixes</h3>
+            <p>18 - 22</p>
         </div>
         <div class="stat-box" style="border-bottom-color: #28a745;">
-            <h3>Chasing Win %</h3>
-            <p>55%</p>
+            <h3>Defending RR</h3>
+            <p>9.4</p>
         </div>
         <div class="stat-box">
-            <h3>Venue Boundaries</h3>
-            <p>45-50</p>
+            <h3>Toss Impact</h3>
+            <p>Bowl First</p>
         </div>
     </div>
 
@@ -100,53 +32,42 @@
         <table class="styled-table">
             <thead>
                 <tr>
-                    <th>Performance Metric</th>
-                    <th>Team India (U19)</th>
-                    <th>Team USA (U19)</th>
+                    <th>T20 World Cup Metrics</th>
+                    <th>India (Hosts)</th>
+                    <th>USA</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>Powerplay Avg (10 Overs)</strong></td>
-                    <td class="highlight-ind">58/1 (5.80 RR)</td>
-                    <td class="highlight-usa">42/3 (4.20 RR)</td>
+                    <td><strong>Powerplay Intent (Expected)</strong></td>
+                    <td class="highlight-ind">65/0 (10.8 RR)</td>
+                    <td class="highlight-usa">48/2 (8.0 RR)</td>
                 </tr>
                 <tr>
-                    <td><strong>Projected Total</strong></td>
-                    <td class="highlight-ind">305 - 325</td>
-                    <td class="highlight-usa">190 - 215</td>
+                    <td><strong>Death Overs (16-20) Avg</strong></td>
+                    <td class="highlight-ind">14.2 runs/over</td>
+                    <td class="highlight-usa">9.1 runs/over</td>
                 </tr>
                 <tr>
-                    <td><strong>Dot Ball Percentage</strong></td>
-                    <td class="highlight-ind">42%</td>
-                    <td class="highlight-usa">58%</td>
+                    <td><strong>Key Player Strike Rate</strong></td>
+                    <td class="highlight-ind">Abhishek Sharma (182.4)</td>
+                    <td class="highlight-usa">A. Gous (138.2)</td>
                 </tr>
                 <tr>
-                    <td><strong>Avg Sixes per Match</strong></td>
-                    <td class="highlight-ind">7.2</td>
-                    <td class="highlight-usa">3.1</td>
+                    <td><strong>Spin Control (Middle Overs)</strong></td>
+                    <td class="highlight-ind">6.4 Econ</td>
+                    <td class="highlight-usa">8.2 Econ</td>
                 </tr>
                 <tr>
-                    <td><strong>Boundary Frequency</strong></td>
-                    <td class="highlight-ind">Every 5.2 balls</td>
-                    <td class="highlight-usa">Every 8.9 balls</td>
-                </tr>
-                <tr>
-                    <td><strong>Spin Strike Rate</strong></td>
-                    <td class="highlight-ind">24.5</td>
-                    <td class="highlight-usa">38.2</td>
+                    <td><strong>Wankhede Six-Hit Success</strong></td>
+                    <td class="highlight-ind">1 per 6.2 balls</td>
+                    <td class="highlight-usa">1 per 11.5 balls</td>
                 </tr>
             </tbody>
         </table>
     </div>
 
     <div class="analysis-card">
-        <h3>💡 Tactical Breakdown</h3>
-        <p>India's dominance at <strong>Willowmoore Park</strong> is driven by their aggressive Powerplay approach. While the venue average score is 245, India's intent to score at 5.8 runs per over in the first 10 overs often pushes the game out of reach before the middle phase. For the USA, the key struggle is the <strong>58% dot ball rate</strong>; against India's spin attack, this pressure often leads to a cluster of wickets.</p>
+        <h3>🔥 Match Day Prediction: Feb 7, 2026</h3>
+        <p>India enters their home World Cup with a <strong>96% win probability</strong>. The Wankhede pitch is a "belter," and with Abhishek Sharma at the top, we expect India to target a 210+ score if batting first. The USA's primary weapon will be <strong>Saurabh Netravalkar</strong>, who needs early wickets to stop the Mumbai onslaught. <strong>Practical Prediction:</strong> India to win by 50+ runs or 7 wickets.</p>
     </div>
-
-    <a href="index.html" class="back-btn">← Back to Dashboard</a>
-</div>
-
-</body>
-</html>
