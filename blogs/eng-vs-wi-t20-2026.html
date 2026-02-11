@@ -3,46 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ENG vs WI Prediction & Stats | PickBetterOfficial</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+  <title>ENG vs WI: The Ultimate Match Script | PickBetterOfficial</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
   <style>
-    :root { --primary: #002D62; --accent: #FF4500; --bg: #f8fafc; --card: #ffffff; }
+    :root { --primary: #002D62; --accent: #FF4500; --gold: #D4AF37; --bg: #f4f7f9; }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Outfit', sans-serif; background: var(--bg); color: #1e293b; line-height: 1.6; }
     
-    nav { background: var(--primary); padding: 1.2rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
-    .logo { color: white; text-decoration: none; font-weight: 900; font-size: 1.4rem; letter-spacing: 1px; }
+    nav { background: var(--primary); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+    .logo { color: white; text-decoration: none; font-weight: 900; font-size: 1.5rem; }
     .logo span { color: var(--accent); }
 
-    .hero { background: linear-gradient(rgba(0,45,98,0.9), rgba(0,45,98,0.9)), url('https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80&w=1000'); background-size: cover; color: white; padding: 80px 20px; text-align: center; }
-    .hero h1 { font-size: 3rem; margin-bottom: 10px; }
-    .hero p { font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; }
+    .hero { background: linear-gradient(rgba(0,45,98,0.8), rgba(0,45,98,0.8)), url('https://images.unsplash.com/photo-1540749465588-1bd13f3ef8aa?q=80&w=2000'); padding: 60px 20px; text-align: center; color: white; }
+    .container { max-width: 1000px; margin: -40px auto 60px; padding: 0 20px; }
+    .card { background: white; border-radius: 25px; padding: 40px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); margin-bottom: 30px; }
 
-    .container { max-width: 1000px; margin: -50px auto 50px; padding: 0 20px; }
-    .content-card { background: var(--card); border-radius: 24px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); margin-bottom: 30px; }
+    .section-title { border-left: 6px solid var(--accent); padding-left: 15px; margin: 30px 0 20px; color: var(--primary); font-weight: 900; }
+    
+    /* Probable XI Grid */
+    .xi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
+    .xi-box { background: #f8fafc; padding: 20px; border-radius: 15px; border-top: 4px solid var(--primary); }
+    .xi-box h4 { margin-bottom: 10px; color: var(--primary); }
 
-    /* Stats Grid */
-    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
-    .stat-box { background: #f1f5f9; padding: 20px; border-radius: 15px; text-align: center; border: 1px solid #e2e8f0; }
-    .stat-box h4 { font-size: 0.8rem; color: #64748b; text-transform: uppercase; }
-    .stat-box p { font-size: 1.5rem; font-weight: 900; color: var(--primary); }
+    /* Score Boxes */
+    .score-predictor { display: flex; gap: 20px; margin: 20px 0; }
+    .score-box { flex: 1; background: var(--primary); color: white; padding: 20px; border-radius: 15px; text-align: center; }
+    .score-box p { font-size: 1.8rem; font-weight: 900; color: var(--gold); }
 
-    /* Pitch & Teams */
-    .info-section { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px; }
-    .info-box { background: #f8fafc; padding: 25px; border-radius: 20px; border-top: 5px solid var(--primary); }
-    .info-box h3 { margin-bottom: 15px; }
+    /* Script Items */
+    .script-item { background: #fffcf0; border: 1px solid #fde68a; padding: 18px; border-radius: 12px; margin-bottom: 12px; }
+    .script-item b { color: var(--primary); }
 
-    /* Admin Prediction */
-    .admin-prediction { background: #fff7ed; border: 2px solid #fdba74; padding: 35px; border-radius: 24px; margin: 40px 0; }
-    .admin-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
-    .admin-header h2 { color: #9a3412; }
-    .script-item { margin-bottom: 15px; padding-left: 20px; border-left: 3px solid var(--accent); }
+    .verdict-banner { background: var(--primary); color: white; text-align: center; padding: 40px; border-radius: 25px; border: 2px solid var(--gold); margin-top: 40px; }
+    .btn-cta { display: inline-block; background: #FF9900; color: black; padding: 15px 40px; text-decoration: none; font-weight: 900; border-radius: 50px; margin-top: 20px; }
 
-    .verdict-box { background: var(--primary); color: white; text-align: center; padding: 40px; border-radius: 20px; margin-top: 40px; }
-    .btn-amazon { display: inline-block; background: #FF9900; color: black; padding: 15px 40px; text-decoration: none; font-weight: 900; border-radius: 50px; margin-top: 20px; transition: 0.3s; }
-    .btn-amazon:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255,153,0,0.4); }
-
-    @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .info-section { grid-template-columns: 1fr; } }
+    @media (max-width: 768px) { .xi-grid, .score-predictor { grid-template-columns: 1fr; flex-direction: column; } }
   </style>
 </head>
 <body>
@@ -50,70 +45,61 @@
 <nav><a href="../index.html" class="logo">PICKBETTER<span>OFFICIAL</span></a></nav>
 
 <div class="hero">
-  <p>T20 World Cup 2026 • Match 15</p>
   <h1>England vs West Indies</h1>
-  <p style="color: white; opacity: 0.8;">Wankhede Stadium, Mumbai | 7:00 PM IST</p>
+  <p>Match 15 • Wankhede Stadium • Feb 11, 2026</p>
 </div>
 
 <div class="container">
-  <div class="content-card">
-    <h2>📊 The Numbers Game</h2>
-    <div class="stats-grid">
-      <div class="stat-box"><h4>Head-to-Head</h4><p>ENG 19 - 18 WI</p></div>
-      <div class="stat-box"><h4>Avg 1st Innings</h4><p>193 Runs</p></div>
-      <div class="stat-box"><h4>Venue Bias</h4><p>Chasing 60% Win</p></div>
-    </div>
+  <div class="card">
+    <h2 class="section-title">🏟️ Pitch Report & Conditions</h2>
+    <p>The Wankhede red-soil surface is showing a <strong>"tennis-ball bounce"</strong> this tournament. While usually a high-scoring ground, the pitch has become <strong>two-paced</strong> (as seen in India vs USA). With no dew expected tonight, bowlers will remain in the game throughout.</p>
 
-    <div class="info-section">
-      <div class="info-box">
-        <h3>🏟️ Pitch Report</h3>
-        <p>The Wankhede deck is a <strong>red-soil beauty</strong>. It offers a "tennis-ball" bounce which the Windies power-hitters will love. Expect <strong>no dew</strong> (as per recent 2026 games), making it a fair fight for bowlers, though short boundaries make 200+ very possible.</p>
+    <h2 class="section-title">🏏 Probable Playing 11</h2>
+    <div class="xi-grid">
+      <div class="xi-box">
+        <h4>🏴󠁧󠁢󠁥󠁮󠁧󠁿 England XI</h4>
+        <p>Phil Salt, Jos Buttler (wk), Jacob Bethell, Tom Banton, Harry Brook (c), Sam Curran, Will Jacks, Liam Dawson, <b>Jamie Overton</b>, Jofra Archer, Adil Rashid.</p>
       </div>
-      <div class="info-box" style="border-top-color: var(--accent);">
-        <h3>🏏 Probable XIs</h3>
-        <p><strong>ENG:</strong> Salt, Buttler (C), Bethell, Brook, Banton, Curran, Jacks, Dawson, Overton, Archer, Rashid.</p>
-        <p style="margin-top:10px;"><strong>WI:</strong> King, Hope (C), Hetmyer, Powell, Rutherford, Holder, Shepherd, Hosein, Forde, Motie, Shamar Joseph.</p>
+      <div class="xi-box" style="border-top-color: #7b002c;">
+        <h4>🌴 West Indies XI</h4>
+        <p>Brandon King, Shai Hope (c/wk), Shimron Hetmyer, Rovman Powell, Sherfane Rutherford, Jason Holder, Romario Shepherd, Akeal Hosein, Matthew Forde, Gudakesh Motie, Shamar Joseph.</p>
       </div>
     </div>
 
-    <div class="admin-prediction">
-      <div class="admin-header">
-        <span style="font-size: 2rem;">🎯</span>
-        <h2>Admin's Match Script</h2>
+    <h2 class="section-title">📉 Admin's Score Predictions</h2>
+    <div class="score-predictor">
+      <div class="score-box">
+        <h4>ENG Batting First</h4>
+        <p>Under 175</p>
       </div>
-      
-      <div class="script-item">
-        <strong>The Toss:</strong> WI to win the toss and likely bowl first to exploit any early seam assistance.
-      </div>
-      <div class="script-item">
-        <strong>The England Intent:</strong> If batting first, ENG will go "Gung-ho." Expect 55+ in Powerplay OR a 2-wicket collapse early.
-      </div>
-      <div class="script-item">
-        <strong>Player Performance:</strong> 
-        <ul>
-            <li>Phil Salt: 25+ Runs (180+ Strike Rate).</li>
-            <li>Jos Buttler: Tactical struggle; predicted to go cheaply.</li>
-            <li>Harry Brook: The anchor; predicted to score a 50.</li>
-        </ul>
-      </div>
-      <div class="script-item">
-        <strong>Bowling Battle:</strong> Adil Rashid will be the most economic. Jofra Archer & Romario Shepherd might leak runs on this flat deck.
+      <div class="score-box" style="background: #7b002c;">
+        <h4>WI Batting First</h4>
+        <p>Under 165</p>
       </div>
     </div>
 
-    <div class="verdict-box">
-      <p style="text-transform: uppercase; letter-spacing: 2px;">Final Verdict</p>
-      <h2 style="font-size: 2.5rem; margin: 10px 0;">🏆 West Indies to Win</h2>
-      <p>A <strong>Last-Ball Thriller</strong> is brewing. Whether it's Hetti finishing a big chase or Holder defending a tight total, the Windies have the Mumbai edge!</p>
-      
-      <a href="https://amzn.to/4csHI6e" target="_blank" class="btn-amazon">🛒 Gear Up for the Match</a>
-      <p style="font-size: 0.7rem; margin-top: 15px; opacity: 0.6;">As an Amazon Associate, PickBetterOfficial earns from qualifying purchases.</p>
+    <h2 class="section-title">🎯 Detailed Match Script (Line-by-Line)</h2>
+    <div class="script-item"><b>1. Toss:</b> West Indies (WI) to win the toss.</div>
+    <div class="script-item"><b>2. England Intent:</b> If batting first, ENG will play with extreme aggression from ball one.</div>
+    <div class="script-item"><b>3. Powerplay:</b> England to score <b>55+</b> runs OR lose <b>2 wickets early</b> in the first 6 overs.</div>
+    <div class="script-item"><b>4. Phil Salt:</b> To score <b>25+ runs</b> with a strike rate of <b>180+</b>.</div>
+    <div class="script-item"><b>5. Jos Buttler:</b> Likely to struggle and get out <b>cheaply</b>.</div>
+    <div class="script-item"><b>6. Harry Brook:</b> Expected to anchor the innings with <b>50 runs</b>.</div>
+    <div class="script-item"><b>7. WI Openers:</b> Both openers are predicted to get out <b>early</b>.</div>
+    <div class="script-item"><b>8. WI Middle Order:</b> <b>Shimmy Hetti</b> and <b>Sherfane Rutherford</b> to play the major role in rescuing the innings.</div>
+    <div class="script-item"><b>9. Bowling ENG:</b> <b>Adil Rashid</b> to be economic and pick wickets; <b>Jofra Archer</b> to go costly.</div>
+    <div class="script-item"><b>10. Bowling WI:</b> <b>Jason Holder</b> to lead (2+ wkts, economic). <b>Akeal Hosein</b> to pick 1+. <b>Shepherd/Shamar</b> to go costly.</div>
+
+    <div class="verdict-banner">
+      <h3>🏆 FINAL VERDICT: WI TO WIN</h3>
+      <p>A <strong>last-ball thriller</strong> is expected! Whether it's a small target or a big chase, West Indies are likely to clinch it.</p>
+      <a href="https://amzn.to/4csHI6e" target="_blank" class="btn-cta">🛒 Gear Up for Match Day</a>
     </div>
   </div>
 </div>
 
-<footer>
-  <p style="text-align: center; color: #94a3b8; padding: 40px 0;">© 2026 PickBetterOfficial | All Rights Reserved</p>
+<footer style="text-align: center; padding-bottom: 40px; color: #94a3b8;">
+  <p>© 2026 PickBetterOfficial</p>
 </footer>
 
 </body>
