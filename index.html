@@ -1,179 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PickBetter – Sports Stats & Gear Reviews</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #0038a8; /* Indian Team Blue */
-      --secondary: #ff6600; /* Action Orange */
-      --bg: #f4f7f9;
-      --card-bg: #ffffff;
-      --text: #1a202c;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PickBetterOfficial | Expert Cricket Scripts & Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #002D62; --accent: #FF4500; --bg: #f8fafc; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Outfit', sans-serif; background: var(--bg); color: #1e293b; }
+        
+        nav { background: var(--primary); padding: 1.2rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo { color: white; text-decoration: none; font-weight: 900; font-size: 1.5rem; }
+        .logo span { color: var(--accent); }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
+        /* Featured Match Card */
+        .featured-container { padding: 40px 5%; max-width: 1200px; margin: 0 auto; }
+        .featured-card { 
+            background: linear-gradient(135deg, #002D62, #001a3a); 
+            border-radius: 30px; 
+            display: flex; 
+            flex-wrap: wrap; 
+            overflow: hidden; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .featured-img { 
+            flex: 1; 
+            min-width: 300px; 
+            background: url('https://images.unsplash.com/photo-1531415074968-036ba1b575da?q=80&w=1000') center/cover; 
+            min-height: 250px; 
+            position: relative;
+        }
+        .live-badge { 
+            position: absolute; top: 20px; left: 20px; background: var(--accent); 
+            color: white; padding: 5px 15px; border-radius: 50px; font-weight: 800; font-size: 0.8rem;
+            animation: pulse 2s infinite;
+        }
+        .featured-text { flex: 1.2; padding: 40px; color: white; min-width: 300px; }
+        .btn-read { 
+            display: inline-block; background: white; color: var(--primary); 
+            padding: 15px 35px; text-decoration: none; border-radius: 50px; 
+            font-weight: 900; margin-top: 20px; transition: 0.3s;
+        }
+        .btn-read:hover { transform: scale(1.05); background: #f0f0f0; }
 
-    /* --- Header & Navigation --- */
-    header {
-      background: var(--primary);
-      color: white;
-      padding: 1.5rem 10%;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    header h1 { font-size: 2.2rem; letter-spacing: -1px; }
-    header p { opacity: 0.9; font-weight: 300; }
-
-    .container {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 20px;
-    }
-
-    h2 {
-      margin: 2rem 0 1rem;
-      font-weight: 800;
-      color: var(--primary);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    /* --- Blog Card Styling --- */
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-
-    .blog-card {
-      background: var(--card-bg);
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-      transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      border-bottom: 4px solid transparent;
-    }
-
-    .blog-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 20px rgba(0,0,0,0.1);
-      border-bottom: 4px solid var(--secondary);
-    }
-
-    .blog-card h3 { margin-bottom: 12px; font-size: 1.25rem; }
-    .blog-card p { color: #4a5568; font-size: 0.95rem; margin-bottom: 20px; flex-grow: 1; }
-
-    /* --- Buttons --- */
-    .btn {
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: var(--primary);
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      transition: gap 0.2s;
-    }
-
-    .btn:hover { gap: 10px; color: var(--secondary); }
-
-    /* --- Community/Telegram Section --- */
-    .telegram-banner {
-      background: linear-gradient(135deg, #0088cc, #0038a8);
-      color: white;
-      padding: 30px;
-      border-radius: 16px;
-      text-align: center;
-      margin-top: 3rem;
-    }
-
-    .tg-btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 30px;
-      background: white;
-      color: #0088cc;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 800;
-      transition: transform 0.2s;
-    }
-
-    .tg-btn:hover { transform: scale(1.05); }
-
-    footer {
-      text-align: center;
-      padding: 3rem 0;
-      font-size: 0.85rem;
-      color: #718096;
-    }
-
-    hr { border: 0; height: 1px; background: #e2e8f0; margin: 40px 0; }
-
-    @media (max-width: 600px) {
-      header h1 { font-size: 1.8rem; }
-      .container { padding: 0 15px; }
-    }
-  </style>
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+        @media (max-width: 768px) { .featured-text { padding: 30px; } .featured-text h1 { font-size: 1.8rem; } }
+    </style>
 </head>
 <body>
 
-<header>
-  <h1>🏏 PickBetter</h1>
-  <p>The Home of Indian Sports Insights & Gear Reviews</p>
-</header>
+<nav><a href="index.html" class="logo">PICKBETTER<span>OFFICIAL</span></a></nav>
 
-<div class="container">
-  
-  <h2>📌 Latest Gear Reviews</h2>
-  <div class="blog-grid">
-    <div class="blog-card">
-      <h3>🏓 Lifelong Pickleball Set (2026)</h3>
-      <p>Is the Lifelong paddle set actually worth it for beginners in India? We break down the grip, weight, and durability.</p>
-      <a href="blogs/lifelong-pickleball-paddle-set-india-2026.html" class="btn">Read Full Review →</a>
+<div class="featured-container">
+    <h2 style="margin-bottom: 20px; font-weight: 900;">🔥 Current Match Script</h2>
+    <div class="featured-card">
+        <div class="featured-img">
+            <span class="live-badge">T20 WORLD CUP 2026</span>
+        </div>
+        <div class="featured-text">
+            <p style="color: var(--accent); font-weight: 700; letter-spacing: 1px;">MATCH 15 • MUMBAI</p>
+            <h1 style="margin: 10px 0;">England vs West Indies</h1>
+            <p style="opacity: 0.9; font-size: 1.05rem;">
+                <b>Admin's Prediction:</b> A last-ball thriller at Wankhede! <br>
+                Expect England < 175 and WI < 165. Check the full line-by-line script and playing 11 now.
+            </p>
+            <a href="blogs/eng-vs-wi-t20-2026.html" class="btn-read">VIEW FULL ANALYSIS →</a>
+        </div>
     </div>
-
-    <div class="blog-card">
-      <h3>🏏 Best Cricket Bats 2026</h3>
-      <p>From English Willow to Kashmir Willow—these are the top picks for club players this season.</p>
-      <a href="blogs/best-cricket-bats-2026.html" class="btn">View Top Picks →</a>
-    </div>
-  </div>
-
-  <hr>
-
-  <h2>🔥 Trending Analysis</h2>
-  <div class="blog-card" style="border-left: 6px solid var(--secondary);">
-    <h3>India vs USA: T20 World Cup 2026</h3>
-    <p>Exclusive predictions, Powerplay targets, and why the Wankhede pitch might surprise the Americans. Check out our deep dive into Bumrah's strategy.</p>
-    <a href="blogs/india vs usa.html" class="btn">Read Match Analysis →</a>
-  </div>
-
-  <div class="telegram-banner">
-    <h3>Join the Inner Circle 🚀</h3>
-    <p>Get instant alerts on match stats and gear price drops!</p>
-    <a href="https://t.me/pickbetter" class="tg-btn" target="_blank">JOIN TELEGRAM</a>
-  </div>
-
-  <footer>
-    <p>⚠️ Disclaimer: As an Amazon Associate, PickBetter earns from qualifying purchases.</p>
-    <p>© 2026 PickBetter • Designed for Performance</p>
-  </footer>
 </div>
+<footer style="text-align: center; padding: 40px; color: #94a3b8; border-top: 1px solid #e2e8f0;">
+    <p>© 2026 PickBetterOfficial | All Rights Reserved</p>
+</footer>
 
 </body>
 </html>
