@@ -1,167 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>PickBetter – Sports Stats, Gear Reviews & Best Picks</title>
-  <meta name="description" content="PickBetter brings sports match stats, cricket and pickleball gear reviews, and the best buying picks for Indian sports fans.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #0038a8; /* Indian Team Blue */
-      --secondary: #ff6600; /* Action Orange */
-      --bg: #f4f7f9;
-      --card-bg: #ffffff;
-      --text: #1a202c;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    header {
-      background: var(--primary);
-      color: white;
-      padding: 1.5rem 10%;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    header h1 { font-size: 2.2rem; letter-spacing: -1px; }
-    header p { opacity: 0.9; font-weight: 300; }
-    .container {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 20px;
-    }
-    h2 {
-      margin: 2rem 0 1rem;
-      font-weight: 800;
-      color: var(--primary);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-    .blog-card {
-      background: var(--card-bg);
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-      transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      border-bottom: 4px solid transparent;
-      margin-bottom: 20px;
-    }
-    .blog-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 20px rgba(0,0,0,0.1);
-      border-bottom: 4px solid var(--secondary);
-    }
-    .blog-card h3 { margin-bottom: 12px; font-size: 1.25rem; }
-    .blog-card p { color: #4a5568; font-size: 0.95rem; margin-bottom: 20px; flex-grow: 1; }
-    .btn {
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: var(--primary);
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      transition: gap 0.2s;
-    }
-    .btn:hover { gap: 10px; color: var(--secondary); }
-    .telegram-banner {
-      background: linear-gradient(135deg, #0088cc, #0038a8);
-      color: white;
-      padding: 30px;
-      border-radius: 16px;
-      text-align: center;
-      margin-top: 3rem;
-    }
-    .tg-btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 30px;
-      background: white;
-      color: #0088cc;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 800;
-      transition: transform 0.2s;
-    }
-    .tg-btn:hover { transform: scale(1.05); }
-    footer {
-      text-align: center;
-      padding: 3rem 0;
-      font-size: 0.85rem;
-      color: #718096;
-    }
-    hr { border: 0; height: 1px; background: #e2e8f0; margin: 40px 0; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PickBetter | Elite Sports Stats & Gear Reviews</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0038a8;
+            --secondary: #ff6600;
+            --dark: #0f172a;
+            --glass: rgba(255, 255, 255, 0.95);
+            --bg: #f1f5f9;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--dark); line-height: 1.6; }
+
+        /* --- Header & Navigation --- */
+        nav { 
+            background: var(--primary); 
+            padding: 1rem 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            position: sticky; top: 0; z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .logo { color: white; text-decoration: none; font-weight: 900; font-size: 1.8rem; letter-spacing: -1px; }
+        .logo span { color: var(--secondary); }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(rgba(0,56,168,0.9), rgba(0,56,168,0.9)), url('https://images.unsplash.com/photo-1540749465588-1bd13f3ef8aa?q=80&w=2000');
+            background-size: cover; background-position: center;
+            padding: 80px 5% 120px; text-align: center; color: white;
+        }
+        .hero h1 { font-size: 3rem; font-weight: 900; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+
+        /* --- Main Content Container --- */
+        .container { max-width: 1200px; margin: -60px auto 60px; padding: 0 20px; }
+
+        .section-title { 
+            font-size: 1.5rem; font-weight: 800; margin-bottom: 25px; 
+            display: flex; align-items: center; gap: 10px; color: var(--dark);
+        }
+
+        /* --- Modern Grid --- */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-bottom: 50px; }
+
+        /* --- Featured Match Card (ENG vs WI) --- */
+        .featured-card {
+            grid-column: 1 / -1;
+            background: white; border-radius: 24px; overflow: hidden;
+            display: flex; flex-wrap: wrap; box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .featured-img { flex: 1; min-width: 300px; background: url('https://images.unsplash.com/photo-1531415074968-036ba1b575da?q=80&w=1000') center/cover; min-height: 300px; }
+        .featured-content { flex: 1.2; padding: 40px; }
+        .badge { background: var(--secondary); color: white; padding: 5px 12px; border-radius: 50px; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; }
+
+        /* --- Regular Blog Cards --- */
+        .card {
+            background: white; padding: 30px; border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: 0.3s;
+            display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .card h3 { margin: 15px 0 10px; font-size: 1.4rem; color: var(--primary); }
+        .card p { color: #64748b; font-size: 1rem; margin-bottom: 20px; }
+
+        /* --- Buttons --- */
+        .btn {
+            display: inline-block; padding: 12px 28px; border-radius: 50px;
+            text-decoration: none; font-weight: 700; transition: 0.3s; text-align: center;
+        }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-secondary { background: var(--secondary); color: white; }
+        .btn:hover { opacity: 0.9; transform: scale(1.03); }
+
+        /* --- Telegram Banner --- */
+        .telegram {
+            background: var(--dark); color: white; padding: 60px; border-radius: 30px;
+            text-align: center; position: relative; overflow: hidden;
+        }
+        .telegram h2 { font-size: 2.2rem; margin-bottom: 10px; }
+
+        footer { text-align: center; padding: 60px 0; color: #94a3b8; border-top: 1px solid #e2e8f0; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .featured-content { padding: 30px; }
+        }
+    </style>
 </head>
 <body>
 
-<header>
-  <h1>🏏 PickBetter</h1>
-  <p>The Home of Indian Sports Insights & Gear Reviews</p>
-</header>
+<nav>
+    <a href="index.html" class="logo">PICKBETTER<span>OFFICIAL</span></a>
+</nav>
+
+<div class="hero">
+    <h1>Elite Sports Analysis</h1>
+    <p>Data-driven cricket scripts, deep-dive gear reviews, and the strategy you won't find anywhere else.</p>
+</div>
 
 <div class="container">
-  
-  <section style="margin: 20px 0; padding: 25px; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-left: 6px solid #ff6600;">
-    <h2 style="margin-top: 0; color: #0038a8;">🔥 Today's Match Analysis</h2>
     
-    <div style="display: flex; flex-direction: column; gap: 10px; padding-bottom: 20px; border-bottom: 1px solid #eee;">
-        <h3 style="margin-bottom: 5px;">England vs West Indies: T20 World Cup 2026</h3>
-        <p style="color: #666; margin: 0;"><b>Admin's Script:</b> Expect a last-ball thriller! Score Prediction: ENG < 175 | WI < 165. Check the 10-point breakdown and Probable XI.</p>
-        <a href="blogs/eng-vs-wi-t20-2026.html" style="display: inline-block; width: fit-content; margin-top: 10px; padding: 10px 20px; background: #ff6600; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s;">
-            Read Full Script & Prediction →
-        </a>
+    <h2 class="section-title">🔥 Tonight's Hot Script</h2>
+    <div class="featured-card">
+        <div class="featured-img"></div>
+        <div class="featured-content">
+            <span class="badge">Match 15 • T20 World Cup</span>
+            <h2 style="font-size: 2.5rem; margin: 15px 0; font-weight: 900;">England vs West Indies</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 25px;">
+                Will the Wankhede "tennis-ball bounce" ruin England's aggressive intent? 
+                Admin predicts a low-scoring thriller. <br>
+                <b>Target Score: ENG < 175 | WI < 165</b>
+            </p>
+            <a href="blogs/eng-vs-wi-t20-2026.html" class="btn btn-secondary">Get the Full Script →</a>
+        </div>
     </div>
 
-    <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;">
-        <h3 style="margin-bottom: 5px;">India vs USA: T20 World Cup 2026</h3>
-        <p style="color: #666; margin: 0;">Check out the exclusive predictions, Powerplay targets, and the impact of Bumrah's absence at Wankhede.</p>
-        <a href="blogs/india vs usa.html" style="display: inline-block; width: fit-content; margin-top: 10px; padding: 10px 20px; background: #0038a8; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s;">
-            Read India vs USA Analysis →
-        </a>
+    <div style="height: 50px;"></div>
+
+    <h2 class="section-title">📌 More Predictions & Reviews</h2>
+    <div class="grid">
+        <div class="card">
+            <div>
+                <span class="badge" style="background: #e2e8f0; color: #475569;">Analysis</span>
+                <h3>India vs USA Analysis</h3>
+                <p>The impact of Bumrah's absence and why the USA middle order is the dark horse of this tournament.</p>
+            </div>
+            <a href="blogs/india vs usa.html" class="btn btn-primary">Read Match Breakdown</a>
+        </div>
+
+        <div class="card">
+            <div>
+                <span class="badge" style="background: #e2e8f0; color: #475569;">Gear Review</span>
+                <h3>Best Cricket Bats 2026</h3>
+                <p>We've tested 15 English Willow bats. Here are the top 3 picks for professional club players in India.</p>
+            </div>
+            <a href="blogs/best-cricket-bats-2026.html" class="btn btn-primary">View Top Picks</a>
+        </div>
+
+        <div class="card">
+            <div>
+                <span class="badge" style="background: #e2e8f0; color: #475569;">Pickleball</span>
+                <h3>Lifelong Paddle Review</h3>
+                <p>Is India's most popular beginner paddle actually worth the money? Let's talk durability and grip.</p>
+            </div>
+            <a href="blogs/lifelong-pickleball-paddle-set-india-2026.html" class="btn btn-primary">See Full Review</a>
+        </div>
     </div>
-  </section>
 
-  <hr>
-
-  <h2>📌 Latest Gear Reviews</h2>
-  <div class="blog-grid">
-    <div class="blog-card">
-      <h3>🏓 Lifelong Pickleball Set (2026)</h3>
-      <p>Is the Lifelong paddle set actually worth it for beginners in India? We break down the grip, weight, and durability.</p>
-      <a href="blogs/lifelong-pickleball-paddle-set-india-2026.html" class="btn">Read Full Review →</a>
+    <div class="telegram">
+        <h2>Join the Inner Circle</h2>
+        <p>Get instant "Script Alerts" and gear price drops before anyone else.</p>
+        <br>
+        <a href="https://t.me/pickbetter" class="btn btn-secondary" style="background: #0088cc;">JOIN TELEGRAM CHANNEL</a>
     </div>
 
-    <div class="blog-card">
-      <h3>🏏 Best Cricket Bats 2026</h3>
-      <p>From English Willow to Kashmir Willow—these are the top picks for club players this season.</p>
-      <a href="blogs/best-cricket-bats-2026.html" class="btn">View Top Picks →</a>
-    </div>
-  </div>
-
-  <div class="telegram-banner">
-    <h3>Join the Inner Circle 🚀</h3>
-    <p>Get instant alerts on match stats and gear price drops!</p>
-    <a href="https://t.me/pickbetter" class="tg-btn" target="_blank">JOIN TELEGRAM</a>
-  </div>
-
-  <footer>
-    <p>⚠️ Disclaimer: As an Amazon Associate, PickBetter earns from qualifying purchases.</p>
-    <p>© 2026 PickBetter • Designed for Performance</p>
-  </footer>
+    <footer>
+        <p>© 2026 PickBetterOfficial • Elite Insights for Serious Fans</p>
+        <p style="font-size: 0.7rem; margin-top: 10px;">⚠️ Disclaimer: As an Amazon Associate, we earn from qualifying purchases.</p>
+    </footer>
 
 </div>
 
