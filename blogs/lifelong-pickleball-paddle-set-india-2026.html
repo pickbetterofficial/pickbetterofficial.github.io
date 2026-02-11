@@ -3,121 +3,159 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog Post | PickBetterOfficial</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+  <title>Lifelong Pickleball Review | PickBetterOfficial</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #002D62;
       --accent: #FF4500;
-      --bg: #ffffff;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
       --text: #1e293b;
-      --light-gray: #f1f5f9;
     }
 
-    /* Support for Hindi and English Fonts */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
     body {
       font-family: 'Outfit', 'Noto Sans Devanagari', sans-serif;
-      line-height: 1.8;
+      background-color: var(--bg);
       color: var(--text);
-      margin: 0;
-      background: var(--bg);
+      line-height: 1.8;
     }
 
-    header {
+    /* --- Top Navigation --- */
+    nav {
       background: var(--primary);
-      padding: 40px 20px;
+      padding: 1rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .logo { color: white; text-decoration: none; font-weight: 900; font-size: 1.2rem; letter-spacing: 1px; }
+    .logo span { color: var(--accent); }
+    .back-link { color: #94a3b8; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
+    .back-link:hover { color: white; }
+
+    /* --- Blog Header Section --- */
+    .blog-header {
+      background: var(--primary);
       color: white;
+      padding: 60px 20px 100px;
       text-align: center;
     }
 
-    .meta { font-size: 0.8rem; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 10px; display: block; }
-    
     .container {
-      max-width: 800px;
-      margin: -40px auto 0;
-      background: white;
-      padding: 40px;
+      max-width: 850px;
+      margin: -60px auto 40px;
+      background: var(--card-bg);
+      padding: 45px;
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+
+    h1 { font-size: 2.8rem; line-height: 1.2; margin-bottom: 25px; color: var(--primary); font-weight: 900; }
+    
+    .hindi-summary { 
+      background: #fff7ed; 
+      border-left: 5px solid var(--accent); 
+      padding: 20px; 
+      margin-bottom: 35px; 
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      border-radius: 0 12px 12px 0;
+      font-size: 1.1rem;
+    }
+
+    /* --- Amazon Deal Box --- */
+    .amazon-box {
+      border: 2px dashed #e2e8f0;
       border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    }
-
-    h1 { font-size: 2.5rem; line-height: 1.2; margin-bottom: 20px; color: var(--primary); }
-    
-    /* Multilingual support: Hindi styling */
-    .hindi-text { font-family: 'Noto Sans Devanagari', sans-serif; color: #475569; border-left: 4px solid var(--accent); padding-left: 15px; margin: 20px 0; font-style: italic; }
-
-    .review-box {
-      background: var(--light-gray);
-      padding: 25px;
-      border-radius: 12px;
-      margin: 30px 0;
-    }
-
-    .verdict {
-      display: inline-block;
-      padding: 5px 15px;
-      background: #22c55e;
-      color: white;
-      border-radius: 5px;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .btn-buy {
-      display: block;
+      padding: 35px;
       text-align: center;
-      background: var(--accent);
-      color: white;
-      padding: 15px;
-      text-decoration: none;
-      font-weight: 700;
-      border-radius: 10px;
-      margin-top: 20px;
+      margin: 45px 0;
+      background: #fdfdfd;
     }
 
-    footer { text-align: center; padding: 40px; color: #94a3b8; font-size: 0.9rem; }
-    
+    .amazon-box h3 { color: var(--primary); margin-bottom: 10px; font-size: 1.4rem; }
+
+    .btn-amazon {
+      display: inline-block;
+      background: linear-gradient(180deg, #ffb700 0%, #ff9900 100%);
+      color: #111;
+      padding: 16px 40px;
+      text-decoration: none;
+      font-weight: 800;
+      border-radius: 50px;
+      margin-top: 15px;
+      box-shadow: 0 6px 15px rgba(255, 153, 0, 0.3);
+      transition: all 0.3s ease;
+      border: 1px solid #d48e00;
+    }
+
+    .btn-amazon:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255, 153, 0, 0.4); }
+
+    .disclaimer {
+      font-size: 0.8rem;
+      color: #64748b;
+      margin-top: 25px;
+      padding-top: 15px;
+      border-top: 1px solid #e2e8f0;
+      font-style: italic;
+    }
+
+    footer { text-align: center; padding: 60px 20px; color: #94a3b8; font-size: 0.9rem; }
+
     @media (max-width: 600px) {
-      .container { margin-top: 0; border-radius: 0; padding: 20px; }
-      h1 { font-size: 1.8rem; }
+      .container { margin-top: -40px; padding: 25px; border-radius: 0; }
+      h1 { font-size: 2rem; }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <a href="../index.html" style="color: white; text-decoration: none; font-weight: 700;">← BACK TO HOME</a>
-</header>
+<nav>
+  <a href="../index.html" class="logo">PICKBETTER<span>OFFICIAL</span></a>
+  <a href="../index.html" class="back-link">← Back to Gear</a>
+</nav>
+
+<div class="blog-header">
+  <p style="color: var(--accent); font-weight: 700; letter-spacing: 3px; text-transform: uppercase;">Expert Review 2026</p>
+</div>
 
 <article class="container">
-  <span class="meta">Equipment Review • 2026</span>
-  <h1>Lifelong Pickleball Paddle Set Review: Best for Beginners in India?</h1>
-  
-  <p class="hindi-text">
-    क्या यह पिकलबॉल सेट भारत में शुरुआती खिलाड़ियों के लिए सही है? चलिए विस्तार से जानते हैं।
-  </p>
+  <h1>Lifelong Pickleball Paddle Set – India Review (2026)</h1>
 
-  <p>
-    If you're just starting your Pickleball journey in India, the <strong>Lifelong Paddle Set</strong> is often the first recommendation you'll see on Amazon. But is it worth your money?
-  </p>
-
-  <div class="review-box">
-    <span class="verdict">OUR VERDICT</span>
-    <p>A solid 4/5 for beginners. It's lightweight, affordable, and comes with a carry bag. However, professional players might find the pop a bit lacking.</p>
-    <a href="YOUR_AMAZON_LINK_HERE" class="btn-buy">Check Price on Amazon India</a>
+  <div class="hindi-summary">
+    अगर आप भारत में पिकलबॉल शुरू करना चाहते हैं, तो Lifelong का यह सेट वैल्यू-फॉर-मनी के मामले में नंबर 1 है।
   </div>
 
-  <h2>Key Features</h2>
-  <ul>
-    <li>Fiberglass surface for better control.</li>
-    <li>Honeycombed polymer core (reduces noise).</li>
-    <li>Sweat-absorbent grip.</li>
-  </ul>
+  <p>
+    Choosing your first paddle set can be confusing. After testing multiple options in the Indian market, the <strong>Lifelong Pickleball Paddle Set</strong> stands out as the ultimate entry-level choice for 2026.
+  </p>
 
+  <div class="amazon-box">
+    <h3>Check Availability & Deals</h3>
+    <p>Grab the beginner bundle with paddles, balls, and carry case.</p>
+    
+    <a href="https://amzn.to/45Y0bUp" target="_blank" class="btn-amazon">
+       🛒 Check Price on Amazon.in
+    </a>
+
+    <p class="disclaimer">
+      ⚠️ <strong>Notice:</strong> As an Amazon Associate, <strong>PickBetterOfficial</strong> earns from qualifying purchases made through the link above at no extra cost to you.
+    </p>
+  </div>
+
+  <h2>Why It Wins for Beginners:</h2>
+  <ul>
+    <li><strong>Perfect Weight:</strong> Not too heavy, which prevents "Pickleball Elbow" for new players.</li>
+    <li><strong>Complete Kit:</strong> You don't need to buy balls or covers separately.</li>
+    <li><strong>Vibrant Design:</strong> High-quality finish that looks professional on the court.</li>
+  </ul>
 </article>
 
 <footer>
-  <p>© 2026 PickBetterOfficial | Trusted Sports Reviews</p>
+  <p>© 2026 PickBetterOfficial | Empowering Indian Athletes</p>
 </footer>
 
 </body>
