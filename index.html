@@ -1,179 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PickBetter | Elite Sports Stats & Gear Reviews</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;900&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #0038a8;
-            --secondary: #ff6600;
-            --dark: #0f172a;
-            --glass: rgba(255, 255, 255, 0.95);
-            --bg: #f1f5f9;
-        }
-
+        :root { --primary: #0038a8; --secondary: #ff6600; --dark: #0f172a; --bg: #f1f5f9; --nepal-red: #dc3545; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--dark); line-height: 1.6; }
-
-        /* --- Header & Navigation --- */
-        nav {
-            background: var(--primary);
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky; top: 0; z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
+        nav { background: var(--primary); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
         .logo { color: white; text-decoration: none; font-weight: 900; font-size: 1.8rem; letter-spacing: -1px; }
         .logo span { color: var(--secondary); }
-
-        /* --- Hero Section --- */
-        .hero {
-            background: linear-gradient(rgba(0, 56, 168, 0.9), rgba(0, 56, 168, 0.9)), url('https://images.unsplash.com/photo-1540749465588-1bd13f3ef8aa?q=80&w=2000');
-            background-size: cover; background-position: center;
-            padding: 80px 5% 120px; text-align: center; color: white;
-        }
-        .hero h1 { font-size: 3rem; font-weight: 900; margin-bottom: 10px; }
-        .hero p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
-
-        /* --- Main Content Container --- */
+        .hero { background: linear-gradient(rgba(0, 56, 168, 0.9), rgba(0, 56, 168, 0.9)), url('https://images.unsplash.com/photo-1540749465588-1bd13f3ef8aa?q=80&w=2000'); background-size: cover; padding: 80px 5% 120px; text-align: center; color: white; }
         .container { max-width: 1200px; margin: -60px auto 60px; padding: 0 20px; }
-
-        .section-title {
-            font-size: 1.5rem; font-weight: 800; margin-bottom: 25px;
-            display: flex; align-items: center; gap: 10px; color: var(--dark);
-        }
-
-        /* --- Modern Grid --- */
+        .section-title { font-size: 1.5rem; font-weight: 800; margin-bottom: 25px; display: flex; align-items: center; gap: 10px; color: var(--dark); }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-bottom: 50px; }
-
-        /* --- Featured Match Card --- */
-        .featured-card {
-            background: white; border-radius: 24px; overflow: hidden;
-            display: flex; flex-wrap: wrap; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(0, 0, 0, 0.05); margin-bottom: 40px;
-        }
-        .featured-img { flex: 1; min-width: 300px; background: url('https://images.unsplash.com/photo-1531415074968-036ba1b575da?q=80&w=1000') center/cover; min-height: 300px; }
+        .featured-card { background: white; border-radius: 24px; overflow: hidden; display: flex; flex-wrap: wrap; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); border: 2px solid var(--primary); margin-bottom: 40px; }
+        .featured-img { flex: 1; min-width: 300px; background: linear-gradient(135deg, var(--nepal-red) 50%, #0056b3 50%); display: flex; align-items: center; justify-content: center; color: white; min-height: 300px; flex-direction: column; text-align: center; }
         .featured-content { flex: 1.2; padding: 40px; }
         .badge { background: var(--secondary); color: white; padding: 5px 12px; border-radius: 50px; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; }
-
-        /* --- Regular Blog Cards --- */
-        .card {
-            background: white; padding: 30px; border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); transition: 0.3s;
-            display: flex; flex-direction: column; justify-content: space-between;
-        }
+        .badge-live { background: var(--nepal-red); animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+        .card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); transition: 0.3s; display: flex; flex-direction: column; justify-content: space-between; }
         .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); }
-        .card h3 { margin: 15px 0 10px; font-size: 1.4rem; color: var(--primary); }
-        .card p { color: #64748b; font-size: 1rem; margin-bottom: 20px; }
-
-        /* --- Buttons --- */
-        .btn {
-            display: inline-block; padding: 12px 28px; border-radius: 50px;
-            text-decoration: none; font-weight: 700; transition: 0.3s; text-align: center;
-        }
+        .btn { display: inline-block; padding: 12px 28px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: 0.3s; text-align: center; }
         .btn-primary { background: var(--primary); color: white; }
         .btn-secondary { background: var(--secondary); color: white; }
-        .btn:hover { opacity: 0.9; transform: scale(1.03); }
-
-        /* --- Telegram Banner --- */
-        .telegram {
-            background: var(--dark); color: white; padding: 60px; border-radius: 30px;
-            text-align: center; position: relative; overflow: hidden; margin-top: 40px;
-        }
-        .telegram h2 { font-size: 2.2rem; margin-bottom: 10px; }
-
+        .telegram { background: var(--dark); color: white; padding: 60px; border-radius: 30px; text-align: center; margin-top: 40px; }
         footer { text-align: center; padding: 60px 0; color: #94a3b8; border-top: 1px solid #e2e8f0; margin-top: 60px; }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .featured-content { padding: 30px; }
-            .featured-card { flex-direction: column; }
-        }
+        @media (max-width: 768px) { .featured-card { flex-direction: column; } }
     </style>
 </head>
-
 <body>
 
-    <nav>
-        <a href="index.html" class="logo">PICKBETTER<span>OFFICIAL</span></a>
-    </nav>
+    <nav><a href="index.html" class="logo">PICKBETTER<span>OFFICIAL</span></a></nav>
 
     <div class="hero">
         <h1>Elite Sports Analysis</h1>
-        <p>Data-driven cricket scripts, deep-dive gear reviews, and the strategy you won't find anywhere else.</p>
+        <p>Data-driven scripts and deep-dive strategy for the T20 World Cup 2026.</p>
     </div>
 
     <div class="container">
         <h2 class="section-title">🔥 Tonight's Hot Script</h2>
         <div class="featured-card">
-            <div class="featured-img" style="background: linear-gradient(135deg, #111 50%, #006400 50%); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: 900;">NZ vs SA</div>
+            <div class="featured-img">
+                <h3 style="font-size: 3rem; font-weight: 900; text-shadow: 2px 2px 10px rgba(0,0,0,0.5);">NEP vs SCO</h3>
+                <p style="font-weight: 600; background: rgba(0,0,0,0.3); padding: 5px 15px; border-radius: 20px; margin-top: 10px;">Wankhede Stadium</p>
+            </div>
             <div class="featured-content">
-                <span class="badge">Match 24 • T20 World Cup</span>
-                <h2 style="font-size: 2.5rem; margin: 15px 0; font-weight: 900;">New Zealand vs South Africa</h2>
+                <span class="badge badge-live">LIVE TODAY • 7:00 PM IST</span>
+                <h2 style="font-size: 2.5rem; margin: 15px 0; font-weight: 900;">The Sandeep Statement</h2>
                 <p style="font-size: 1.1rem; margin-bottom: 25px;">
-                    Will "Baby AB" Brevis fire or will Ish Sodhi dominate the middle overs? 
-                    Admin predicts a high-scoring chase with a nail-biting finish.
+                    Nepal returns to Wankhede for their final stand. Can Sandeep Lamichhane deliver the <b>3+ wicket haul</b> as predicted? Check the full player-by-player script.
                 </p>
-                <a href="blogs/nz-vs-sa.html" class="btn btn-secondary">Get the Full Script →</a>
+                <a href="blogs/nep-vs-sco.html" class="btn btn-secondary">Get the Full Script →</a>
             </div>
         </div>
 
         <h2 class="section-title">📚 More Analysis & Reviews</h2>
         <div class="grid">
+            <div class="card" style="border-top: 4px solid #006400;">
+                <div>
+                    <span class="badge" style="background: #006400;">Match 24</span>
+                    <h3>New Zealand vs South Africa</h3>
+                    <p>Ahmedabad Bounce & The Neesham Factor. Check our high-accuracy breakdown.</p>
+                </div>
+                <a href="blogs/nz-vs-sa.html" class="btn btn-primary">Read Script</a>
+            </div>
+
             <div class="card">
                 <div>
-                    <span class="badge" style="background: #002D62;">Match 15 Analysis</span>
+                    <span class="badge" style="background: #002D62;">Match 15</span>
                     <h3>England vs West Indies</h3>
-                    <p>Relive the tactical breakdown of the Wankhede "tennis-ball bounce" script.</p>
+                    <p>Tactical breakdown of the Wankhede "tennis-ball bounce" script.</p>
                 </div>
                 <a href="blogs/eng-vs-wi-t20-2026.html" class="btn btn-primary">Read Script</a>
             </div>
 
-            <div class="card" style="border: 2px solid #e11d48;">
+            <div class="card" style="border: 1px solid #e11d48;">
                 <div>
-                    <span class="badge" style="background: #e11d48; color: white;">🔥 70% OFF LOOT</span>
-                    <h3>Boldfit Flash Sale Alert!</h3>
-                    <p>Grab the premium non-marking court shoes at their lowest price ever. Limited stock.</p>
+                    <span class="badge" style="background: #e11d48;">🔥 LOOT</span>
+                    <h3>Boldfit Flash Sale</h3>
+                    <p>70% OFF on premium non-marking court shoes. Limited stock.</p>
                 </div>
-                <a href="blogs/boldfit-flash-sale.html" class="btn" style="background: #e11d48; color: white;">Claim Discount</a>
-            </div>
-
-            <div class="card">
-                <div>
-                    <span class="badge" style="background: #e2e8f0; color: #475569;">Gear Review</span>
-                    <h3>Best Cricket Bats 2026</h3>
-                    <p>We've tested 15 English Willow bats. Top 3 picks for club players in India.</p>
-                </div>
-                <a href="blogs/best-cricket-bats-2026.html" class="btn btn-primary">View Picks</a>
-            </div>
-
-            <div class="card">
-                <div>
-                    <span class="badge" style="background: #dcfce7; color: #166534;">Court Mastery</span>
-                    <h3>Boldfit Shoes Review</h3>
-                    <p>Testing grip, weight, and court performance of India's best budget badminton shoes.</p>
-                </div>
-                <a href="blogs/boldfit-shoes-review.html" class="btn btn-primary">View Review</a>
+                <a href="blogs/boldfit-flash-sale.html" class="btn" style="background: #e11d48; color: white;">Claim Deal</a>
             </div>
         </div>
 
         <div class="telegram">
             <h2>Join the Inner Circle</h2>
-            <p>Get instant "Script Alerts" and gear price drops before anyone else.</p>
-            <br>
+            <p>Get instant "Script Alerts" and gear price drops before anyone else.</p><br>
             <a href="https://t.me/pickbetter" class="btn btn-secondary" style="background: #0088cc;">JOIN TELEGRAM CHANNEL</a>
         </div>
 
         <footer>
             <p>© 2026 PickBetterOfficial • Elite Insights for Serious Fans</p>
-            <p style="font-size: 0.7rem; margin-top: 10px;">⚠️ Disclaimer: As an Amazon Associate, we earn from qualifying purchases.</p>
         </footer>
     </div>
-
 </body>
 </html>
