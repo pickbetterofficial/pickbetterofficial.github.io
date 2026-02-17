@@ -22,9 +22,9 @@
         .badge { background: var(--secondary); color: white; padding: 5px 12px; border-radius: 50px; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; }
         .badge-live { background: var(--nepal-red); animation: pulse 2s infinite; }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
-        .card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); transition: 0.3s; display: flex; flex-direction: column; justify-content: space-between; }
+        .card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); transition: 0.3s; display: flex; flex-direction: column; justify-content: space-between; height: 100%; }
         .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); }
-        .btn { display: inline-block; padding: 12px 28px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: 0.3s; text-align: center; }
+        .btn { display: inline-block; padding: 12px 28px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: 0.3s; text-align: center; border: none; cursor: pointer; }
         .btn-primary { background: var(--primary); color: white; }
         .btn-secondary { background: var(--secondary); color: white; }
         .telegram { background: var(--dark); color: white; padding: 60px; border-radius: 30px; text-align: center; margin-top: 40px; }
@@ -50,41 +50,59 @@
             </div>
             <div class="featured-content">
                 <span class="badge badge-live">LIVE TODAY • 7:00 PM IST</span>
-                <h2 style="font-size: 2.5rem; margin: 15px 0; font-weight: 900;">The Sandeep Statement</h2>
+                <h2 style="font-size: 2.5rem; margin: 15px 0; font-weight: 900;">The Wankhede Script</h2>
                 <p style="font-size: 1.1rem; margin-bottom: 25px;">
-                    Nepal returns to Wankhede for their final stand. Can Sandeep Lamichhane deliver the <b>3+ wicket haul</b> as predicted? Check the full player-by-player script.
+                    Nepal returns to Mumbai for a high-stakes clash. We predict a <b>3+ wicket haul</b> for Sandeep and a calculated blitz from Lokesh Bam. Check the full script now.
                 </p>
                 <a href="blogs/nep-vs-sco.html" class="btn btn-secondary">Get the Full Script →</a>
             </div>
         </div>
 
-        <h2 class="section-title">📚 More Analysis & Reviews</h2>
+        <h2 class="section-title">📚 Analysis & Gear Reviews</h2>
         <div class="grid">
-            <div class="card" style="border-top: 4px solid #006400;">
+            <div class="card">
                 <div>
                     <span class="badge" style="background: #006400;">Match 24</span>
-                    <h3>New Zealand vs South Africa</h3>
-                    <p>Ahmedabad Bounce & The Neesham Factor. Check our high-accuracy breakdown.</p>
+                    <h3>NZ vs South Africa</h3>
+                    <p>Relive the tactical breakdown of the Neesham factor and the Ahmedabad bounce.</p>
                 </div>
                 <a href="blogs/nz-vs-sa.html" class="btn btn-primary">Read Script</a>
+            </div>
+
+            <div class="card" style="border: 2px solid #e11d48;">
+                <div>
+                    <span class="badge" style="background: #e11d48;">🔥 70% OFF LOOT</span>
+                    <h3>Boldfit Flash Sale Alert!</h3>
+                    <p>Grab premium non-marking court shoes at their lowest price ever. Limited stock deals inside.</p>
+                </div>
+                <a href="blogs/boldfit-flash-sale.html" class="btn" style="background: #e11d48; color: white;">Claim Discount</a>
             </div>
 
             <div class="card">
                 <div>
                     <span class="badge" style="background: #002D62;">Match 15</span>
                     <h3>England vs West Indies</h3>
-                    <p>Tactical breakdown of the Wankhede "tennis-ball bounce" script.</p>
+                    <p>Deep dive into the Wankhede "tennis-ball bounce" script and power-hitting matchups.</p>
                 </div>
                 <a href="blogs/eng-vs-wi-t20-2026.html" class="btn btn-primary">Read Script</a>
             </div>
 
-            <div class="card" style="border: 1px solid #e11d48;">
+            <div class="card">
                 <div>
-                    <span class="badge" style="background: #e11d48;">🔥 LOOT</span>
-                    <h3>Boldfit Flash Sale</h3>
-                    <p>70% OFF on premium non-marking court shoes. Limited stock.</p>
+                    <span class="badge" style="background: #dcfce7; color: #166534;">Court Mastery</span>
+                    <h3>Boldfit Shoes Review</h3>
+                    <p>Testing grip, weight, and court performance of India's best budget non-marking shoes.</p>
                 </div>
-                <a href="blogs/boldfit-flash-sale.html" class="btn" style="background: #e11d48; color: white;">Claim Deal</a>
+                <a href="blogs/boldfit-shoes-review.html" class="btn btn-primary">View Review</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <span class="badge" style="background: #e2e8f0; color: #475569;">Gear Review</span>
+                    <h3>Best Cricket Bats 2026</h3>
+                    <p>We've tested 15 English Willow bats. Top 3 picks for club players in India.</p>
+                </div>
+                <a href="blogs/best-cricket-bats-2026.html" class="btn btn-primary">View Picks</a>
             </div>
         </div>
 
